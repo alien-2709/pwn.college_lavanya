@@ -60,12 +60,12 @@ I learnt how to read a file using cat without using cd to navigate to that direc
 Did not use any references for this challenge.
 
 # GREPPING FOR A NEEDLE IN THE HAYSTACK.
-type what the challenge asks
+Using grep , search for  the flag (which begins with pwn.college) in the file /challenge/data.txt where thousands of lines of text are present.
 
 ## My solve
 **Flag:** `pwn.college{4xKVwWO89Ej5PtgtSF7e8Aa0Sz1.QX3EDO0wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+For this challenge , I first understood how to use grep to read big files that cannot be read out by cat . I used *grep SEARCH_STRING path/to/file* , in order to search for pwn.college in the big file /challenge/data.txt.
 
 ```
 hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep pwn.college /challenge/data.txt
@@ -73,10 +73,10 @@ pwn.college{4xKVwWO89Ej5PtgtSF7e8Aa0Sz1.QX3EDO0wiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+Through this challenge , I learnt about a new command called grep which is used to read out required sections of files that are so big that cat cannot be used. One of the ways to use grep is *grep SEARCH_STRING path/to/file* where grep will search the file for lines of text containing SEARCH_STRING and print them to the console.
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
 
 # COMPARING FILES
 There are two files in /challenge:
@@ -90,7 +90,7 @@ Use diff to find what's different between these files and get your flag.
 ## My solve
 **Flag:** ` pwn.college{kb350L8jbCYKPJwp1P7pyQd94Yo.01MwMDOxwiM4kjNzEzW}`
 
-Through my understanding of diff through the
+Through my understanding of diff as shown in the example , I used diff followed by the two files as arguments such that the difference between them will be given as output in the terminal. This output would be the flag as it is the only element thats different between the two files full of fake flags .Thus , I was able to obtain the flag.
 
 ```
 hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/decoys_and_real.txt
@@ -99,7 +99,7 @@ hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/de
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+Through this challenge , I learnt about the usage of diff to compare two files and how the difference between the files will be given as output in the form of 
 
 ## References 
 Add an references or videos you used while solving the challenge.
@@ -174,6 +174,50 @@ Explain what new topics you learned/information you gained through this challeng
 
 ## References 
 Add an references or videos you used while solving the challenge.
+
+# MOVING FILES
+type what the challenge asks
+
+## My solve
+**Flag:** `pwn.college{YwNUQbXpsY2MprdUWhN6Sk_MtFG.0VOxEzNxwiM4kjNzEzW}`
+
+Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+
+```
+hacker@commands~moving-files:~$ mv /flag /tmp/hack-the-planet
+Correct! Performing 'mv /flag /tmp/hack-the-planet'.
+hacker@commands~moving-files:~$ /challenge/check
+Congrats! You successfully moved the flag to /tmp/hack-the-planet! Here it is:
+pwn.college{YwNUQbXpsY2MprdUWhN6Sk_MtFG.0VOxEzNxwiM4kjNzEzW}
+```
+
+## What I learned
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+# HIDDEN FILES
+type what the challenge asks
+
+## My solve
+**Flag:** ``
+
+Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+
+```bash
+example triple ticks for bash
+pwn.college{helloworld}
+```
+
+## What I learned
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+
+
 
 
 
