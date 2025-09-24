@@ -99,20 +99,20 @@ hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/de
 ```
 
 ## What I learned
-Through this challenge , I learnt about the usage of diff to compare two files and how the difference between the files will be given as output in the form of 
+Through this challenge , I learnt about the usage of diff to compare two files line by line and how the difference between the files will be given as output in the form of numbers and letters which indicate which line is changed / replaced .
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
 
 # LISTING FILES
-type what the challenge asks
+
 
 ## My solve
 **Flag:** `pwn.college{helloworld}`
 
 Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 
-```bash
+```
 example triple ticks for bash
 pwn.college{helloworld}
 ```
@@ -125,14 +125,14 @@ Add an references or videos you used while solving the challenge.
 
 
 # TOUCHING FILES
-type what the challenge asks
+ To create two files: /tmp/pwn and /tmp/college, and run /challenge/run to get your flag.
 
 ## My solve
 **Flag:** `pwn.college{Mj_doy3xeTcNUjxtasnZUNUX5hX.QXwMDO0wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+I first navigated to the /tmp directory from ~ directory. Next, I understood the usage of command touch to create new files and thus used it to create the files given in the challenge. Then I ran /challenge/run in order to get the flag.
 
-```bash
+```
 hacker@commands~touching-files:~$ pwd
 /home/hacker
 hacker@commands~touching-files:~$ cd /tmp
@@ -146,21 +146,21 @@ pwn.college{Mj_doy3xeTcNUjxtasnZUNUX5hX.QXwMDO0wiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+Through this challenge , I learnt about a new command called touch that is used to create new files in Linux.
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
 
 
 # REMOVING FILES
-type what the challenge asks
+To remove the delete_me file created in the home directory by using rm command and then run /challenge/check which will check if you deleted the file and then give you the flag.
 
 ## My solve
 **Flag:** `pwn.college{oAVOEM_HAfS3kiD4gSa0-YVlDU9.QX2kDM1wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+I first understood  the usage of the rm command to remove a file in Linux by referring to the examples given . Next, I applied this in the terminal to delete the delete_me file created in the home directory , followed by running /challenge/check to obtain the flag.
 
-```bash
+```
 hacker@commands~removing-files:~$ ls
 Desktop  d  delete_me  x
 hacker@commands~removing-files:~$ rm delete_me
@@ -170,18 +170,18 @@ pwn.college{oAVOEM_HAfS3kiD4gSa0-YVlDU9.QX2kDM1wiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+I learnt the usage of the rm command in order to remove/delete files from a directory in Linux.
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge .
 
 # MOVING FILES
-type what the challenge asks
+This challenge wants you to move the /flag file into /tmp/hack-the-planet and when you're done, run /challenge/check,to obtain the flag.
 
 ## My solve
 **Flag:** `pwn.college{YwNUQbXpsY2MprdUWhN6Sk_MtFG.0VOxEzNxwiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+I first understood the usage of command mv in order to move one file into another within a directory . Next , I applied this to my solve and was able to obtain the flag.
 
 ```
 hacker@commands~moving-files:~$ mv /flag /tmp/hack-the-planet
@@ -192,29 +192,36 @@ pwn.college{YwNUQbXpsY2MprdUWhN6Sk_MtFG.0VOxEzNxwiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+Through this challenge , I learnt about a new command called 'mv' used to move files , that is one file into another within a directory.
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
 
 # HIDDEN FILES
-type what the challenge asks
+The flag is hidden as a dot-prepended file in / . We must obtain it.
 
 ## My solve
-**Flag:** ``
+**Flag:** `pwn.college{g61rHXIOIR5VkSNwLMQiH8omTr1.QXwUDO0wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+I first navigated to the '/' directory and listed out all unhidden files using ls.  
+As explained in the example , ls does not list all the files within a directory . There are some files that are hidden and must be accessed using ls -a. Thus , I used ls -a to obtain the dot-prepended file containing the flag. Next , I used cat to read out its contents and obtained the flag.
 
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+hacker@commands~hidden-files:~$ cd /
+hacker@commands~hidden-files:/$ ls
+bin  boot  challenge  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  nix  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+hacker@commands~hidden-files:/$ ls -a
+.   .dockerenv             bin   challenge  etc   lib    lib64   media  nix  proc  run   srv  tmp  var
+..  .flag-316161129630811  boot  dev        home  lib32  libx32  mnt    opt  root  sbin  sys  usr
+hacker@commands~hidden-files:/$ cat /.flag-316161129630811
+pwn.college{g61rHXIOIR5VkSNwLMQiH8omTr1.QXwUDO0wiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+I learnt about the concept of hidden files (files that start with .) and how they can be accessed using ls -a (where -a is a format of ls ) instead of just ls because Linux by default does not list those files.
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
 
 
 
