@@ -59,6 +59,123 @@ I learnt how to read a file using cat without using cd to navigate to that direc
 ## References 
 Did not use any references for this challenge.
 
+# GREPPING FOR A NEEDLE IN THE HAYSTACK.
+type what the challenge asks
+
+## My solve
+**Flag:** `pwn.college{4xKVwWO89Ej5PtgtSF7e8Aa0Sz1.QX3EDO0wiM4kjNzEzW}`
+
+Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+
+```
+hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep pwn.college /challenge/data.txt
+pwn.college{4xKVwWO89Ej5PtgtSF7e8Aa0Sz1.QX3EDO0wiM4kjNzEzW}
+```
+
+## What I learned
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+# COMPARING FILES
+There are two files in /challenge:
+
+1./challenge/decoys_only.txt contains 100 fake flags.  
+
+2./challenge/decoys_and_real.txt contains all 100 fake flags plus the one real flag.  
+
+Use diff to find what's different between these files and get your flag.
+
+## My solve
+**Flag:** ` pwn.college{kb350L8jbCYKPJwp1P7pyQd94Yo.01MwMDOxwiM4kjNzEzW}`
+
+Through my understanding of diff through the
+
+```
+hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/decoys_and_real.txt
+66a67
+> pwn.college{kb350L8jbCYKPJwp1P7pyQd94Yo.01MwMDOxwiM4kjNzEzW}
+```
+
+## What I learned
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+# LISTING FILES
+type what the challenge asks
+
+## My solve
+**Flag:** `pwn.college{helloworld}`
+
+Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+
+```bash
+example triple ticks for bash
+pwn.college{helloworld}
+```
+
+## What I learned
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+
+# TOUCHING FILES
+type what the challenge asks
+
+## My solve
+**Flag:** `pwn.college{Mj_doy3xeTcNUjxtasnZUNUX5hX.QXwMDO0wiM4kjNzEzW}`
+
+Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+
+```bash
+hacker@commands~touching-files:~$ pwd
+/home/hacker
+hacker@commands~touching-files:~$ cd /tmp
+hacker@commands~touching-files:/tmp$ touch pwn
+hacker@commands~touching-files:/tmp$ touch college
+hacker@commands~touching-files:/tmp$ ls
+bin  college  hsperfdata_root  pwn  tmp.TpSOPGOVKK
+hacker@commands~touching-files:/tmp$ /challenge/run
+Success! Here is your flag:
+pwn.college{Mj_doy3xeTcNUjxtasnZUNUX5hX.QXwMDO0wiM4kjNzEzW}
+```
+
+## What I learned
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+
+# REMOVING FILES
+type what the challenge asks
+
+## My solve
+**Flag:** `pwn.college{oAVOEM_HAfS3kiD4gSa0-YVlDU9.QX2kDM1wiM4kjNzEzW}`
+
+Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+
+```bash
+hacker@commands~removing-files:~$ ls
+Desktop  d  delete_me  x
+hacker@commands~removing-files:~$ rm delete_me
+hacker@commands~removing-files:~$ /challenge/check
+Excellent removal. Here is your reward:
+pwn.college{oAVOEM_HAfS3kiD4gSa0-YVlDU9.QX2kDM1wiM4kjNzEzW}
+```
+
+## What I learned
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+
 
 
 
