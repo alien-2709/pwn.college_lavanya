@@ -256,7 +256,7 @@ In this challenge, I have hidden the flag. Here, you will use ls and cat to foll
 5.As TEASER was a suspicious file , I catted it out to obtain the next clue in */usr/share/racket/pkgs/mysterx*.  
 
 
-6. As the clue is hidden , I navigated to the directory */usr/share/racket/pkgs/mysterx* and listed out all the files including hidden ones using 'ls -a'.
+6.As the clue is hidden , I navigated to the directory */usr/share/racket/pkgs/mysterx* and listed out all the files including hidden ones using 'ls -a'.
 
 
 7.As .SECRET seemed like a suspicious file , I catted it out to obtain the next clue in */usr/share/help/it*.  
@@ -268,16 +268,16 @@ In this challenge, I have hidden the flag. Here, you will use ls and cat to foll
 9.As BLUEPRINT seemed suspicious , I catted it out to obtain the next clue in  */usr/lib/python3.8/multiprocessing/__pycache__*.  
 
 
-10. As the clue is delayed , I entered the directory */usr/lib/python3.8/multiprocessing/__pycache__* and then listed out the files in it.
+10.As the clue is delayed , I entered the directory */usr/lib/python3.8/multiprocessing/__pycache__* and then listed out the files in it.
     
     
-11. As MEMO seemed suspicious , I catted it out to obtain the next clue in */usr/share/racket/pkgs/math-lib/math/private/distributions/impl/compiled*.
+11.As MEMO seemed suspicious , I catted it out to obtain the next clue in */usr/share/racket/pkgs/math-lib/math/private/distributions/impl/compiled*.
     
 
-12. As the clue is trapped , I listed the files in it directly by using its absolute path 'ls */usr/share/racket/pkgs/math-lib/math/private/distributions/impl/compiled*'.
+12.As the clue is trapped , I listed the files in it directly by using its absolute path 'ls */usr/share/racket/pkgs/math-lib/math/private/distributions/impl/compiled*'.
    
 
-13. Since TRACE-TRAPPED looked suspicious , I catted it out by using its absolute path to obtain the next clue in */usr/share/racket/pkgs/draw-doc/scribblings/draw*.
+13.Since TRACE-TRAPPED looked suspicious , I catted it out by using its absolute path to obtain the next clue in */usr/share/racket/pkgs/draw-doc/scribblings/draw*.
     
 
 
