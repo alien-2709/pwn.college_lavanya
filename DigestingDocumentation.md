@@ -172,7 +172,8 @@ Firstly , I used 'man man' to read the manual page of ' man '.
 ```
 hacker@man~searching-for-manuals:~$ man man
 ```
-Next , I noticed the argument ' -k ' 
+Next , I noticed the argument ' -k '(apropos/index search which basically searches all the manpages for a match) and used it to find any matches with challenge. After finding the match , I invoked the name given i.e. 'jllqniwikj' as an argument for 'man' to find the instructions to execute /challenge/challenge.
+According to the instruction , using ' --jllqni 306 ' as an argument to /challenge/challenge , I was able to find the flag.
 ```
  -k, --apropos
               Approximately equivalent to apropos.  Search the short manual page descriptions for keywords and display any matches.  See apro‐
@@ -185,10 +186,10 @@ Correct usage! Your flag: pwn.college{UFNLTQjQ306S1DZlOlVYqVPVUni.QX2EDO0wiM4kjN
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+Through this challenge , I learnt how to find a hidden manpage , and also navigate through the man page collecting clues . 
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
 
 
 # HELPFUL PROGRAMS
