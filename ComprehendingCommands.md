@@ -422,6 +422,51 @@ Through this challenge I learnt about a new command called 'mkdir' which is used
 ## References 
 Did not use any references for this challenge.
 
+# FINDING FILES
+To find the hidden  called 'flag'  kept in a random directory.
+
+## My solve
+**Flag:** `pwn.college{helloworld}`
+
+Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+
+```bash
+example triple ticks for bash
+pwn.college{helloworld}
+```
+
+## What I learned
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+# LINKING FILES
+The flag is in /flag, but /challenge/catflag will instead read out /home/hacker/not-the-flag. Use the symlink, and fool it into giving you the flag.
+
+## My solve
+**Flag:** `pwn.college{EhG2rrjsBVe-Iy2vqJcRCH-z9CZ.QX5ETN1wiM4kjNzEzW}`
+
+First I tried to link /flag and /home/hacker/not-the-flag but it didn't as the file already existed , thus I first deleted /home/hacker/not-the-flag file using 'rm'. Next, I used ln -s to link /flag and ~/not-the-flag.Then , I invoked /challenge/catflag to get the flag.
+
+```
+hacker@commands~linking-files:~$ rm /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ ln -s /flag /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{EhG2rrjsBVe-Iy2vqJcRCH-z9CZ.QX5ETN1wiM4kjNzEzW}
+```
+
+## What I learned
+Through this challenge , I learnt about the difference between symbolic(soft) links and hard links.
+In a filesystem a file is conceptually, an address at which the contents of that file live. A hard link is an alternate address that indexes that data. Accesses to the hard link and accesses to the original file are completely identical, in that they immediately yield the necessary data. A soft/symbolic link, instead, contains the original file name. When you access the symbolic link, Linux will realize that it is a symbolic link, read the original file name, and then (typically) automatically access that file. In most cases, both situations result in accessing the original data, but the mechanisms are different. Symbolic links are created using 'ln -s [originalpath] [newpath] '.
+Next , I also learnt about a command called 'file' which takes the filename and then tells you what type of file it is.
+
+## References 
+Did not use any references for this challenge.
+
+
+
 
 
 
