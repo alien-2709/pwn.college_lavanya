@@ -90,6 +90,27 @@ Did not use any references for this challenge.
 Thera are some diversely-named files in /challenge/files. Go cd there and run /challenge/run, providing a single argument: a short (3 characters or less) globbed word with two * globs in it that covers every word that contains the letter p.
 
 ## My solve
+**Flag:** `pwn.college{QIHzhR_qkFaggAgnJWN2ncHKsIS.0lM3kjNxwiM4kjNzEzW}`
+
+Firstly , I navigated to the directory '/challenge/files' using 'cd' . Next , I ran '/challenge/run' with an argument **p** which contains at most 3 characters and also covers every word that contains the letter p.Thus , I was able to get the flag.
+
+```
+hacker@globbing~multiple-globs:~$ cd /challenge/files
+hacker@globbing~multiple-globs:/challenge/files$ /challenge/run *p*
+You got it! Here is your flag!
+pwn.college{QIHzhR_qkFaggAgnJWN2ncHKsIS.0lM3kjNxwiM4kjNzEzW}
+```
+
+## What I learned
+Through this challenge, I learnt how multiple globs can be used and that Bash supports the expansion of multiple globs in a single word.
+
+## References 
+Did not use any references for this challenge.
+
+# MIXING GLOBS
+There are  diversely-named files in /challenge/files. Go cd there and, using the globbing you've learned, write a single, short (6 characters or less) glob that (when passed as an argument to /challenge/run) will match the files "challenging", "educational", and "pwning".
+
+## My solve
 **Flag:** `pwn.college{helloworld}`
 
 Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
@@ -100,10 +121,96 @@ pwn.college{helloworld}
 ```
 
 ## What I learned
-Through this challenge
+Explain what new topics you learned/information you gained through this challenge.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+# EXCLUSIONARY GLOBBING
+Go forth to /challenge/files and run /challenge/run with all files that don't start with p, w, or n.
+
+## My solve
+**Flag:** `pwn.college{QHBwU8Z56XGctg0a2sa27X20Fe2.QX2IDO0wiM4kjNzEzW}`
+
+I first navigated to the directory '/challenge/files' using 'cd'. Next , as I ran '/challenge/run' with the argument [!pwn]* as the requirement is that the file shouldn't start with a p,w or n and can be followed by anything, thus represent by [!pwn] and '*'.Thus , I was able to get the flag.
+
+```
+hacker@globbing~exclusionary-globbing:~$ cd /challenge/files
+hacker@globbing~exclusionary-globbing:/challenge/files$ /challenge/run [!pwn]*
+You got it! Here is your flag!
+pwn.college{QHBwU8Z56XGctg0a2sa27X20Fe2.QX2IDO0wiM4kjNzEzW}
+```
+
+## What I learned
+Through this challenge , I learnt how to use '!'/'^' before characters in a '[]' glob in order to say that these characters should not exist in the filename.
 
 ## References 
 Did not use any references for this challenge.
+
+
+# TAB COMPLETION
+type what the challenge asks
+
+## My solve
+**Flag:** `pwn.college{Y25iSJTqpfEOrVm4uI54cO-1NTH.0FN0EzNxwiM4kjNzEzW}`
+
+Firstly , as shown in the example , I listed the directories present in '/challenge' . Next I catted  out /challenge/pwn<TAB> where clicking <TAB> autocompleted the filename and thus the flag was obtained.
+
+```
+hacker@globbing~tab-completion:~$ ls /challenge
+DESCRIPTION.md  pwncollege​
+hacker@globbing~tab-completion:~$ cat /challenge/pwncollege​ 
+pwn.college{Y25iSJTqpfEOrVm4uI54cO-1NTH.0FN0EzNxwiM4kjNzEzW}
+```
+
+## What I learned
+Through this challenge , I learnt that using '*' can lead to mistakes and expansion of unintended files and if this continues eventually it will be too late until the 'rm' command is used. Thus , a safer alternative when you are trying to specify a specific target is tab completion. If you hit tab in the shell, it'll try to figure out what you're going to type and automatically complete it.
+
+## References 
+Did not use any references for this challenge.
+
+
+# MULTIPLE OPTIONS FOR TAB COMPLETION
+type what the challenge asks
+
+## My solve
+**Flag:** `pwn.college{helloworld}`
+
+Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+
+```bash
+example triple ticks for bash
+pwn.college{helloworld}
+```
+
+## What I learned
+Through this challenge , I learnt that when there are multiple files with similar names, thus there are multiple options for tab autocompletion . In this case by default bash will auto-expand until the first point when there are multiple options . When you hit tab a second time, it'll print out those options. Other shells and configurations, instead, will cycle through the options.
+
+## References 
+Add an references or videos you used while solving the challenge.
+
+
+# TAB COMPLETION ON COMMAND
+This level has a command that starts with pwncollege, and it'll give you the flag. Type pwncollege and hit the tab key to auto-complete it.
+
+## My solve
+**Flag:** `pwn.college{I6ZGGsmqvVOaW4KTZU0AixPbK0K.0VN0EzNxwiM4kjNzEzW}`
+
+Firstly . according to the instructions given , I typed in pwncollege and the hit <TAB> for autocompletion. Hitting <TAB> once more after the first autocompletion gave me the flag.
+
+```
+hacker@globbing~tab-completion-on-commands:~$ pwncollege-24096 
+Correct! Here is your flag:
+pwn.college{I6ZGGsmqvVOaW4KTZU0AixPbK0K.0VN0EzNxwiM4kjNzEzW}
+```
+
+## What I learned
+Through this challenge , I learnt that tab completion is for more than files, You can also tab-complete commands.Any command can be auto completed but callous auto-completes without double-checking the result can wreak havoc in your shell if you accidentally run the wrong commands.
+
+## References 
+Did not use any reference for this challenge.
+
+
 
 
 
