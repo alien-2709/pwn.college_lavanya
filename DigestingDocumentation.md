@@ -156,16 +156,32 @@ Did not use any references for this challenge.
 
 
 # SEARCHING FOR MANUALS
-type what the challenge asks
+In this challenge ,the manpage for the challenge is hidden by randomizing its name. Luckily, all of the manpages are gathered in a searchable database, so you'll be able to search the man page database to find the hidden challenge man page. To figure out how to search for the right manpage, read the man page manpage by doing: man man.  
+
+
+HINT 1: man man teaches you advanced usage of the man command itself, and you must use this knowledge to figure out how to search for the hidden manpage that will tell you how to use /challenge/challenge.  
+
+
+HINT 2: though the manpage is randomly named, you still actually use /challenge/challenge to get the flag.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{UFNLTQjQ306S1DZlOlVYqVPVUni.QX2EDO0wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+Firstly , I used 'man man' to read the manual page of ' man '. 
 
-```bash
-example triple ticks for bash
-pwn.college{helloworld}
+```
+hacker@man~searching-for-manuals:~$ man man
+```
+Next , I noticed the argument ' -k ' 
+```
+ -k, --apropos
+              Approximately equivalent to apropos.  Search the short manual page descriptions for keywords and display any matches.  See apro‐
+              pos(1) for details.
+hacker@man~searching-for-manuals:~$ man -k challenge
+jllqniwikj (1)       - print the flag!
+hacker@man~searching-for-manuals:~$ man jllqniwikj
+hacker@man~searching-for-manuals:~$ /challenge/challenge --jllqni 306
+Correct usage! Your flag: pwn.college{UFNLTQjQ306S1DZlOlVYqVPVUni.QX2EDO0wiM4kjNzEzW}
 ```
 
 ## What I learned
