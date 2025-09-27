@@ -426,20 +426,53 @@ Did not use any references for this challenge.
 To find the hidden  called 'flag'  kept in a random directory.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{MP1TOr16IYpdifm_VWbBi6_68ZJ.QXyMDO0wiM4kjNzEzW}`
+First, I used find followed by '-type f'(in order to check file type) and '-name flag' . Using this , I was able to see a lot of files being present out of which only one file stood out which was */usr/local/lib/python3.8/dist-packages/pip/_vendor/pyproject_hooks/flag*
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 
-```bash
-example triple ticks for bash
-pwn.college{helloworld}
+```
+hacker@commands~finding-files:~$ find / -type f -name flag
+find: ‘/root’: Permission denied
+find: ‘/proc/1/task/1/fd’: Permission denied
+find: ‘/proc/1/task/1/fdinfo’: Permission denied
+find: ‘/proc/1/task/1/ns’: Permission denied
+find: ‘/proc/1/fd’: Permission denied
+find: ‘/proc/1/map_files’: Permission denied
+find: ‘/proc/1/fdinfo’: Permission denied
+find: ‘/proc/1/ns’: Permission denied
+find: ‘/proc/7/task/7/fd’: Permission denied
+find: ‘/proc/7/task/7/fdinfo’: Permission denied
+find: ‘/proc/7/task/7/ns’: Permission denied
+find: ‘/proc/7/fd’: Permission denied
+find: ‘/proc/7/map_files’: Permission denied
+find: ‘/proc/7/fdinfo’: Permission denied
+find: ‘/proc/7/ns’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/apache2’: Permission denied
+find: ‘/var/log/mysql’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/php/sessions’: Permission denied
+find: ‘/var/lib/mysql-files’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/mysql-keyring’: Permission denied
+find: ‘/var/lib/mysql’: Permission denied
+find: ‘/tmp/tmp.4mK6TfTSUV’: Permission denied
+find: ‘/run/mysqld’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+/usr/local/lib/python3.8/dist-packages/pip/_vendor/pyproject_hooks/flag
+hacker@commandsfinding-files:~$ cat /usr/local/lib/python3.8/dist-packages/pip/_vendor/pyproject_hooks/flag
+pwn.college{MP1TOr16IYpdifm_VWbBi6_68ZJ.QXyMDO0wiM4kjNzEzW}hacker@commands~finding-files:~$ 
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+Through this challenge , I learnt how to use find to locate a particular file in a directory . Moreover , I also learnt how to use -type f which is a find test that matching actual files . 
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
 
 # LINKING FILES
 The flag is in /flag, but /challenge/catflag will instead read out /home/hacker/not-the-flag. Use the symlink, and fool it into giving you the flag.
