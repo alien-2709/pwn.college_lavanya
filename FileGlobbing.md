@@ -174,23 +174,34 @@ Did not use any references for this challenge.
 
 
 # MULTIPLE OPTIONS FOR TAB COMPLETION
-type what the challenge asks
+This challenge has a /challenge/files directory with a bunch of files starting with pwncollege. Tab-complete from /challenge/files/p or so, and make your way to the flag!
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{Y6wK3jS_i65gngeXEBWd81q8_01.0lN0EzNxwiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+Firstly , I 'cd'd' into the directory '/challenge/files' and then as per the instructions /challenge/files/p<TAB> in order to use tab completion . Next , I kept on using tab completion until i reached 'pwncollege-flamingo' where i noticed the option of 'pwncollege-flag' so I catted it out to obtain the flag.
 
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+hacker@globbing~multiple-options-for-tab-completion:~$ cd /challenge/files
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ /challenge/files/pwn
+pwn                    pwn-the-planet         pwncollege-flamingo    pwncollege-hacking
+pwn-college            pwncollege-family      pwncollege-flyswatter
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ /challenge/files/pwncollege-f
+pwncollege-family      pwncollege-flamingo    pwncollege-flyswatter
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ /challenge/files/pwncollege-fl
+pwncollege-flamingo    pwncollege-flyswatter
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ /challenge/files/pwncollege-flamingo
+hack-the-planet        pwn-college            pwncollege-family      pwncollege-flamingo    pwncollege-hacking
+pwn                    pwn-the-planet         pwncollege-flag        pwncollege-flyswatter
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwncollege-flag
+pwn.college{Y6wK3jS_i65gngeXEBWd81q8_01.0lN0EzNxwiM4kjNzEzW}
 ```
 
 ## What I learned
 Through this challenge , I learnt that when there are multiple files with similar names, thus there are multiple options for tab autocompletion . In this case by default bash will auto-expand until the first point when there are multiple options . When you hit tab a second time, it'll print out those options. Other shells and configurations, instead, will cycle through the options.
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
 
 
 # TAB COMPLETION ON COMMAND
