@@ -111,20 +111,23 @@ Did not use any references for this challenge.
 There are  diversely-named files in /challenge/files. Go cd there and, using the globbing you've learned, write a single, short (6 characters or less) glob that (when passed as an argument to /challenge/run) will match the files "challenging", "educational", and "pwning".
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{wVcUEeJq-QOI75T_7etjVS0BGIa.QX1IDO0wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+Firstly , I navigated to the '/challenge/files' directory . Next , I ran '/challenge/run ' with the argument [pce]*, which was the suitable argument to match the files "challenging","educational" and "pwning".After several tries I was able to get it right .
 
-```bash
-example triple ticks for bash
-pwn.college{helloworld}
+```
+hacker@globbing~mixing-globs:~$ cd /challenge/files
+hacker@globbing~mixing-globs:/challenge/files$ /challenge/run [pce]*
+You got it! Here is your flag!
+pwn.college{wVcUEeJq-QOI75T_7etjVS0BGIa.QX1IDO0wiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+Through this challenge , I learnt how to use multiple globs in the same argument in order to match with the given files .
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.
+
 
 # EXCLUSIONARY GLOBBING
 Go forth to /challenge/files and run /challenge/run with all files that don't start with p, w, or n.
@@ -149,7 +152,7 @@ Did not use any references for this challenge.
 
 
 # TAB COMPLETION
-type what the challenge asks
+This challenge has copied the flag into /challenge/pwncollege, and you can freely cat that file. But you can't type the filename. In order to get the flag , make sure that you must tab-complete it.
 
 ## My solve
 **Flag:** `pwn.college{Y25iSJTqpfEOrVm4uI54cO-1NTH.0FN0EzNxwiM4kjNzEzW}`
