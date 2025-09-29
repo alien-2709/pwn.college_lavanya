@@ -175,15 +175,16 @@ FD 2: Standard Error
 
 When you redirect process communication, you do it by FD number, though some FD numbers are implicit. For example, a > without a number implies 1>, which redirects FD 1 (Standard Output). Thus, the following two commands are equivalent:  
 
-
+```
 hacker@dojo:~$ echo hi > asdf  
-
-hacker@dojo:~$ echo hi 1> asdf  
+hacker@dojo:~$ echo hi 1> asdf
+```
 
 
 And To redirect errors we use '2>'.  
-
-hacker@dojo:~$ echo hi 2> errors.log  
+```
+hacker@dojo:~$ echo hi 2> errors.log
+```
 
 
 
@@ -406,17 +407,14 @@ pwn.college{o-1O5lH-_Akn2MqxgW00i-BvOkF.QXxITO0wiM4kjNzEzW}
 ## What I learned
 Through this challenge , I learnt about  The tee command, named after a "T-splitter" from plumbing pipes, duplicates data flowing through your pipes to any number of files provided on the command line.
 For e.g.  
+```
 hacker@dojo:~$ echo hi | tee pwn college  
-
 hi  
-
 hacker@dojo:~$ cat pwn  
-
 hi  
-
 hacker@dojo:~$ cat college  
-
-hi  
+hi
+```
 
 Here, by providing two files to tee, we ended up with three copies of the piped-in data: one to stdout, one to the pwn file, and one to the college file.
 
@@ -445,27 +443,22 @@ hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) 
 ## What I learned
 Through this challenge , I learnt how to hook input and output of programs to arguments of commands. This is done using Process Substitution. For reading from a command (input process substitution), use <(command). When you write <(command), bash will run the command and hook up its output to a temporary file that it will create. This isn't a real file, of course, it's what's called a named pipe, in that it has a file name:  
 
-
+```
 hacker@dojo:~$ echo <(echo hi)  
-
 /dev/fd/63  
-
 hacker@dojo:~$  
-
+```
 bash replaced <(echo hi) with the path of the named pipe (/dev/fd/63)  file that's hooked up to the command's output. While the command is running, reading from this file will read data from the standard output of the command. Typically, this is done using commands that take input files as arguments. 
 
 you can specify this multiple times:  
 
-
+```
 hacker@dojo:~$ echo <(echo pwn) <(echo college)  
-
 /dev/fd/63 /dev/fd/64  
-
 hacker@dojo:~$ cat <(echo pwn) <(echo college)  
-
 pwn  
-
-college  
+college
+```
 
 
 ## References 
@@ -489,15 +482,13 @@ pwn.college{c7YVNziHcP9KMm8RDAivLMSYmSk.QXwgDN1wiM4kjNzEzW}
 ## What I learned
 Through this challenge , I learnt that for writing to a command (output process substitution), use >(command). If you write an argument of >(rev), bash will run the rev command (this command reads data from standard input, reverses its order, and writes it to standard output!), but hook up its input to a temporary named pipe file. When commands write to this file, the data goes to the standard input of the command  
 
-
+```
 hacker@dojo:~$ echo Hello | rev  
-
 olleH  
- 
-hacker@dojo:~$ echo Hello | tee >(rev)  
-
+ hacker@dojo:~$ echo Hello | tee >(rev)  
 Hello  
-olleH  
+olleH
+```
 
 Above, the following sequence of events took place:  
 
