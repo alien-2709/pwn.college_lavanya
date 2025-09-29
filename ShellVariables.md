@@ -112,20 +112,99 @@ VAR is: 1337
 Did not use any references for this challenge.  
 
 # PRINTING EXPORTED VARIABLES 
-type what the challenge asks
+Try the env command: it'll print out every exported variable set in your shell, and you can look through that output to find the FLAG variable
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `FLAG=pwn.college{g-TX3VDP6MkNu1YA8_pgAOgARRm.QX4UTN0wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+I ran the env command that printed out every exported variable in my shell and found the flag.
 
-```bash
-example triple ticks for bash
-pwn.college{helloworld}
+```
+hacker@variables~printing-exported-variables:~$ env
+SHELL=/run/dojo/bin/bash
+HOSTNAME=variables~printing-exported-variables
+PWD=/home/hacker
+MANPATH=/run/dojo/share/man:
+DOJO_AUTH_TOKEN=cd5246196dd17a8efd2bcfdc2f4f82a9799ae386f5b4d19aa0118ff9b498f95b
+HOME=/home/hacker
+LANG=C.UTF-8
+FLAG=pwn.college{g-TX3VDP6MkNu1YA8_pgAOgARRm.QX4UTN0wiM4kjNzEzW}
+TERMINFO=/run/dojo/share/terminfo
+TERM=xterm-256color
+SHLVL=2
+LC_CTYPE=C.UTF-8
+SSL_CERT_FILE=/run/dojo/etc/ssl/certs/ca-bundle.crt
+PATH=/run/challenge/bin:/run/dojo/bin:/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+DEBIAN_FRONTEND=noninteractive
+_=/run/dojo/bin/env
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+I learnt that 'env' command prints out all the exported variables .  
 
 ## References 
-Add an references or videos you used while solving the challenge.
+Did not use any references for this challenge.  
+
+# STORING COMMAND OUTPUT
+Read the output of the /challenge/run command directly into a variable called PWN, and it will contain the flag.
+
+## My solve
+**Flag:** `pwn.college{QRAReCwoH1-uuTj28Ybyf0vc0Is.QX1cDN1wiM4kjNzEzW}`
+
+First, I used my understanding of the examples given in order to assign the output of '/challenge/run' to the variable 'PWN'.Next , I printed it out using echo.
+
+```
+hacker@variables~storing-command-output:~$ PWN=$(/challenge/run)
+Congratulations! You have read the flag into the PWN variable. Now print it out 
+and submit it!
+hacker@variables~storing-command-output:~$ echo "$PWN"
+pwn.college{QRAReCwoH1-uuTj28Ybyf0vc0Is.QX1cDN1wiM4kjNzEzW}
+```
+
+## What I learned
+Through this challenge , I learnt about *Command Substitution* and how to use it to read the output of a command directly into a variable.
+
+## References 
+Did not use any references for this challenge.  
+
+
+# READING INPUT
+In this challenge, your job is to use read to set the PWN variable to the value COLLEGE
+
+## My solve
+**Flag:** `pwn.college{4yKsMu2PB0PTtJvyMOHq0cch6TH.QX4cTN0wiM4kjNzEzW}`
+
+I used my understanding of the concept of reading variables to solve this challenge . I used command 'read' along with an argument '-p' in order to specify a prompt and read the variable 'PWN'. Next , as per the challenge instructions , I gave 'PWN' the value of 'COLLEGE' and thus obtained the flag.
+
+```
+hacker@variables~reading-input:~$ read -p "INPUT: " PWN 
+INPUT: COLLEGE
+You've set the PWN variable properly! As promised, here is the flag:
+pwn.college{4yKsMu2PB0PTtJvyMOHq0cch6TH.QX4cTN0wiM4kjNzEzW}
+```
+
+## What I learned
+I learnt how to use 'read' builtin to read a variable and assign a value to it.I also learnt that 'read' reads data from your standard input.
+
+## References 
+Did not use any references for this challenge.  
+
+
+# READING FILES
+Read /challenge/read_me into the PWN environment variable, and we'll give you the flag. The /challenge/read_me will keep changing, so you'll need to read it right into the PWN variable with one command.
+
+## My solve
+**Flag:** `pwn.college{o49CYGab25WIKnV88a_7hCJa22z.QXwIDO0wiM4kjNzEzW}`
+I used redirection i.e I redirected '/challenge/read_me' into the standard input of 'read', and so when 'read' reads into PWN, it reads from the file.
+
+```
+hacker@variables~reading-files:~$ read PWN < /challenge/read_me
+You've set the PWN variable properly! As promised, here is the flag:
+pwn.college{o49CYGab25WIKnV88a_7hCJa22z.QXwIDO0wiM4kjNzEzW}
+```
+
+## What I learned
+I learnt how to read a file through this challenge i.e. by using redirection instead of writing a long program using cat.
+
+## References 
+Did not use any references for this challenge.
