@@ -4,7 +4,7 @@ In this level, /challenge/run will print the flag but will swap the casing of al
 ## My solve
 **Flag:** `pwn.college{ANGEmY5swSD6xPreMlFKuUKCbZd.01MxEzNxwiM4kjNzEzW}`
 
-Using my understanding of the 'tr' command which translates the characters provided in the first argument with characters provided in the second argument 
+Using my understanding of the 'tr' command which translates the characters provided in the first argument with characters provided in the second argument , I was able to obtain the flag.
 
 ```
 hacker@data~translating-characters:~$ /challenge/run | tr abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
@@ -13,7 +13,7 @@ pwn.college{ANGEmY5swSD6xPreMlFKuUKCbZd.01MxEzNxwiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+I learnt about the command 'tr' which is used to translate basically 
 
 ## References 
 Add an references or videos you used while solving the challenge.
