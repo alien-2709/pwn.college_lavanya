@@ -130,7 +130,7 @@ In this challenge, there's a file at /challenge/flags.txt containing 100 fake fl
 ## My solve
 **Flag:** `pwn.college{snxEk4jauJVUtmcdXY8P1VLWMfT.0FM0MDOxwiM4kjNzEzW}`
 
-Through my understanding of the 'sort' command that sorts file content alphabetically , I used 'sort /challenge/flags.txt' to find the flag.
+Through my understanding of the 'sort' command that sorts file content alphabetically , I used 'sort /challenge/flags.txt' to find the flag. 
 
 ```
 hacker@data~sorting-data:~$ sort /challenge/flags.txt
