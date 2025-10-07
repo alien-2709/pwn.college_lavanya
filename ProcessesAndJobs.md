@@ -120,10 +120,14 @@ Did not use any references for this challenge.
 
 
 # KILLING MISBEHAVING PROCESSES.
-type what the challenge asks
+
+* Check what processes are running.
+* Find /challenge/decoy in the list and figure out its process ID.
+* kill it.
+* Run /challenge/run to get the flag without being overwhelmed by decoys (you don't need to redirect its output; it'll write to the FIFO on its own).
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** ``
 
 Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
 
