@@ -67,7 +67,7 @@ nl -ba ~/dexquest_out/sources/com/shinsu/dexquest/screens/NextRoom.java | sed -n
 ```
 So the final flag depends entirely on the runtime value of Vault.password. In Vault.java that field is only assigned when green == 99 (i.e. when the 99-digit check passes).  
 
-14.However the string that was extracted by A.I earlier did not get submitted in the app and thus , I wasnt able to move to the next room where the flag is present . After trying multiple time , the app still wouldnt accept all 99 digits i.e. green didn't reach 99 . Thus , I utilised A.I to create a python script that can compute the exact error in the original script and give me the correct passcode .  
+14.However the string that was extracted by A.I earlier did not get submitted in the app and thus , I wasnt able to move to the next room where the flag is present . After trying multiple times , the app still wouldnt accept all 99 digits i.e. green didn't reach 99 . Thus , I utilised A.I to create a python script that can compute the exact error in the original script and give me the correct passcode .  
 I saved the below .py file as check_vault.py.
 ```
 # create and run the helper script
