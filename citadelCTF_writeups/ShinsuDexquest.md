@@ -278,7 +278,7 @@ Copy this exact 99-digit string (the expected value) and paste it into the app i
 ```
 16.The sealed observer screen upon submission displayed the message :  
 *You have acquired a brand new Shinsu Stabilizer Crystal!*  
-17.Next, I went to the barrier screen , passed it and proceeded to the next room where I clicked on '<flag>' to obtain the flag.  
+17.Next, I went to the barrier screen , passed it and proceeded to the next room where I clicked on '< flag >' to obtain the flag.  
 ```
 flag: citadel{f33ls_g00d_to_n0t_g3t_d33p_fr13d}
 ```
