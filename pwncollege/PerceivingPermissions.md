@@ -426,41 +426,290 @@ Did not use any references for this challenge.
 
 
 
-# Challenge Name
-type what the challenge asks
+# PERMISSION SETTING PRACTICE
+This level extends the previous level by requesting more radical permission changes, which you will need = and ,-chaining to achieve.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{4qz-Ob4HnhiwkQ-QEzbCsTcvtVR.QXzETO0wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+1.I ran '/challenge/run' in order to obtain the instructions.  
+2.Used my understanding of (u,g,o)=(-,r,w,x) to pass the rounds.  
+3.Obtained the flag .
 
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+acker@permissions~permissions-setting-practice:~$ /challenge/run
+Round 1 of 8!
+
+Current permissions of "/challenge/pwn": rw-r--r--
+* the user does have read permissions
+* the user does have write permissions
+- the user doesn't have execute permissions
+* the group does have read permissions
+- the group doesn't have write permissions
+- the group doesn't have execute permissions
+* the world does have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+
+Needed permissions of "/challenge/pwn": rwxr-----
+* the user does have read permissions
+* the user does have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+- the group doesn't have write permissions
+- the group doesn't have execute permissions
+- the world doesn't have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=rwx,g=r,o=- /challenge/pwn
+You set the correct permissions!
+Round 2 of 8!
+
+Current permissions of "/challenge/pwn": rwxr-----
+* the user does have read permissions
+* the user does have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+- the group doesn't have write permissions
+- the group doesn't have execute permissions
+- the world doesn't have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+
+Needed permissions of "/challenge/pwn": r-x-wxrw-
+* the user does have read permissions
+- the user doesn't have write permissions
+* the user does have execute permissions
+- the group doesn't have read permissions
+* the group does have write permissions
+* the group does have execute permissions
+* the world does have read permissions
+* the world does have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=rx,g=wx,o=rw /challenge/pwn
+You set the correct permissions!
+Round 3 of 8!
+
+Current permissions of "/challenge/pwn": r-x-wxrw-
+* the user does have read permissions
+- the user doesn't have write permissions
+* the user does have execute permissions
+- the group doesn't have read permissions
+* the group does have write permissions
+* the group does have execute permissions
+* the world does have read permissions
+* the world does have write permissions
+- the world doesn't have execute permissions
+
+Needed permissions of "/challenge/pwn": -w--w-r--
+- the user doesn't have read permissions
+* the user does have write permissions
+- the user doesn't have execute permissions
+- the group doesn't have read permissions
+* the group does have write permissions
+- the group doesn't have execute permissions
+* the world does have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=w,g=w,o=r /challenge/pwn
+You set the correct permissions!
+Round 4 of 8!
+
+Current permissions of "/challenge/pwn": -w--w-r--
+- the user doesn't have read permissions
+* the user does have write permissions
+- the user doesn't have execute permissions
+- the group doesn't have read permissions
+* the group does have write permissions
+- the group doesn't have execute permissions
+* the world does have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+
+Needed permissions of "/challenge/pwn": rwxr-x---
+* the user does have read permissions
+* the user does have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+- the group doesn't have write permissions
+* the group does have execute permissions
+- the world doesn't have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=rwx,g=rx,o=- /challenge/pwn
+You set the correct permissions!
+Round 5 of 8!
+
+Current permissions of "/challenge/pwn": rwxr-x---
+* the user does have read permissions
+* the user does have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+- the group doesn't have write permissions
+* the group does have execute permissions
+- the world doesn't have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+
+Needed permissions of "/challenge/pwn": r-xr-x-w-
+* the user does have read permissions
+- the user doesn't have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+- the group doesn't have write permissions
+* the group does have execute permissions
+- the world doesn't have read permissions
+* the world does have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=rx,g=rx,o=w /challenge/pwn
+You set the correct permissions!
+Round 6 of 8!
+
+Current permissions of "/challenge/pwn": r-xr-x-w-
+* the user does have read permissions
+- the user doesn't have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+- the group doesn't have write permissions
+* the group does have execute permissions
+- the world doesn't have read permissions
+* the world does have write permissions
+- the world doesn't have execute permissions
+
+Needed permissions of "/challenge/pwn": rwxrw-rw-
+* the user does have read permissions
+* the user does have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+* the group does have write permissions
+- the group doesn't have execute permissions
+* the world does have read permissions
+* the world does have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=rwx,g=rw,o=rw /challenge/pwn
+You set the correct permissions!
+Round 7 of 8!
+
+Current permissions of "/challenge/pwn": rwxrw-rw-
+* the user does have read permissions
+* the user does have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+* the group does have write permissions
+- the group doesn't have execute permissions
+* the world does have read permissions
+* the world does have write permissions
+- the world doesn't have execute permissions
+
+Needed permissions of "/challenge/pwn": r-x-w----
+* the user does have read permissions
+- the user doesn't have write permissions
+* the user does have execute permissions
+- the group doesn't have read permissions
+* the group does have write permissions
+- the group doesn't have execute permissions
+- the world doesn't have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=rx,g=w,o=- /challenge/pwn
+You set the correct permissions!
+Round 8 of 8!
+
+Current permissions of "/challenge/pwn": r-x-w----
+* the user does have read permissions
+- the user doesn't have write permissions
+* the user does have execute permissions
+- the group doesn't have read permissions
+* the group does have write permissions
+- the group doesn't have execute permissions
+- the world doesn't have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+
+Needed permissions of "/challenge/pwn": rwxr-xrw-
+* the user does have read permissions
+* the user does have write permissions
+* the user does have execute permissions
+* the group does have read permissions
+- the group doesn't have write permissions
+* the group does have execute permissions
+* the world does have read permissions
+* the world does have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=rwx,g=rx,o=rw /challenge/pwn
+You set the correct permissions!
+You've solved all 8 rounds! I have changed the ownership
+of the /flag file so that you can 'chmod' it. You won't be able to read
+it until you make it readable with chmod!
+
+Current permissions of "/flag": ---------
+- the user doesn't have read permissions
+- the user doesn't have write permissions
+- the user doesn't have execute permissions
+- the group doesn't have read permissions
+- the group doesn't have write permissions
+- the group doesn't have execute permissions
+- the world doesn't have read permissions
+- the world doesn't have write permissions
+- the world doesn't have execute permissions
+hacker@permissions~permissions-setting-practice:~$ chmod u=r,g=r,o=r /flag
+hacker@permissions~permissions-setting-practice:~$ cat /flag
+pwn.college{4qz-Ob4HnhiwkQ-QEzbCsTcvtVR.QXzETO0wiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
+* In addition to adding and removing permissions, as in the previous level, chmod can also simply set permissions altogether, overwriting the old ones. This is done by using = instead of - or +. For example:
 
-## References 
-Add an references or videos you used while solving the challenge.  
+- u=rw sets read and write permissions for the user, and wipes the execute permission
+- o=x sets only executable permissions for the world, wiping read and write
+- a=rwx sets read, write, and executable permissions for the user, group, and world!
 
-# Challenge Name
-type what the challenge asks
+* chaining multiple modes to chmod with ,:
+
+- ```chmod u=rw,g=r /challenge/pwn``` will set the user permissions to read and write, and the group permissions to read-only
+- ```chmod a=r,u=rw /challenge/pwn``` will set the user permissions to read and write, and the group and world permissions to read-only
+- Additionally, you can zero out permissions with -:
+  ```chmod u=rw,g=r,o=- /challenge/pwn``` will set the user permissions to read and write, the group permissions to read-only, and the world permissions to nothing at all.
+
+## References
+No references.
+
+# THE SUID BIT
+Add the SUID bit to the /challenge/getroot program in order to spawn a root shell for you to cat the flag.
 
 ## My solve
-**Flag:** `pwn.college{helloworld}`
+**Flag:** `pwn.college{QYGbXcvBK4Ia-1EnXHtBgbcKtZy.QXzEjN0wiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+1.listed the permissions of '/challenge/getroot'.  
+2.Using 'chmod u+s [file]' , I was able to add a SUID bit to /challenge/getroot.  
+3.I ran '/challenge/getroot' to spawn a root shell and catted the flag in that shell .
 
 ```bash
-example triple ticks for bash
-pwn.college{helloworld}
+hacker@permissions~the-suid-bit:~$ ls -l /challenge/getroot
+-rwxr-xr-x 1 root root 155 Jan 14  2025 /challenge/getroot
+hacker@permissions~the-suid-bit:~$ chmod u+s /challenge/getroot
+hacker@permissions~the-suid-bit:~$ ls -l /challenge/getroot
+-rwsr-xr-x 1 root root 155 Jan 14  2025 /challenge/getroot
+hacker@permissions~the-suid-bit:~$ /challenge/getroot
+SUCCESS! You have set the suid bit on this program, and it is running as root!
+Here is your shell...
+root@permissions~the-suid-bit:~# cat /flag
+pwn.college{QYGbXcvBK4Ia-1EnXHtBgbcKtZy.QXzEjN0wiM4kjNzEzW}
 ```
 
 ## What I learned
-Explain what new topics you learned/information you gained through this challenge.
-
+* the "Set User ID" (SUID) permissions bit allows the user to run a program as the owner of that program's file.
+* The permissions of a file with SUID look like this:
+  ```
+  hacker@dojo:~$ ls -l /usr/bin/sudo
+  -rwsr-xr-x 1 root root 232416 Dec 1 11:45 /usr/bin/sudo
+  hacker@dojo:~$
+  ```
+ - The s part in place of the executable bit means that the program is executable with SUID. It means that, regardless of what user runs the program (as long as they have executable permissions), the program will execute as the owner user (in this case, the root user).
+* As the owner of a file, you can set a file's SUID bit by using chmod:
+  ```chmod u+s [program]```
+* Giving the SUID bit to an executable owned by root can give attackers a possible attack vector to become root.
+  
 ## References 
-Add an references or videos you used while solving the challenge. 
+No references.
 
