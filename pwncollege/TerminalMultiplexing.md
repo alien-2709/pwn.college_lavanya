@@ -183,7 +183,9 @@ We've created a tmux session with two windows:
 ## My solve
 **Flag:** `pwn.college{wBxs0Jv7UJMLJZMMzgebdQbEVtI.0FM5IDOxwiM4kjNzEzW}`
 
-Explain how you arrived at the solution and your thought process behind solving the challenge. Include as much as info as possible. Use triple ticks for bash.
+1. launched tmux.
+2. Used ctrlB+w to view the window picker.
+3. Selected Window 0 and got the flag.
 
 ```bash
 (0)   - challenge_session: 2 windows
