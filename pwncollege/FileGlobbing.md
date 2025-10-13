@@ -15,7 +15,7 @@ pwn.college{8aOezG8Pn0JMYv2IEqC5kHFV0qU.QXxIDO0wiM4kjNzEzW}
 ```
 
 ## What I learned
-Through this challenge , I got introduced to the topic of file globbing with '*'. When the shell encounters a '*' character in any argument, it will treat it as a "wildcard" and try to replace that argument with any files that match the pattern. For eg. if you wanted to echo  files - star1 , star2 and star3. We can use globbing and just *echo LOOK:star** which will output all files following this pattern . I also learnt that when zero files are matched, by default, the shell leaves the glob unchanged. for eg.In the earlier example if we *echo Look:hello** then the output would be *hello**.
+Through this challenge , I got introduced to the topic of file globbing with an asterisk .  When the shell encounters an asterisk character in any argument, it will treat it as a "wildcard" and try to replace that argument with any files that match the pattern. For eg. if you wanted to echo  files - star1 , star2 and star3. We can use globbing and just *echo LOOK:star** which will output all files following this pattern . I also learnt that when zero files are matched, by default, the shell leaves the glob unchanged. for eg.In the earlier example if we *echo Look:hello** then the output would be *hello**.
 
 ## References 
 Did not use any references for this challenge.
@@ -67,7 +67,7 @@ Through this challenge , I learnt that '[]' is a limited form of '?' where inste
 Did not use any references for this challenge.
 
 # MATCHING PATHS WITH []
-type what the challenge asks
+Run /challenge/run with a single argument such that the path of files is expanded.
 
 ## My solve
 **Flag:** `pwn.college{ompiuS8Uz-8tNckn9_YBPEPsv9e.QX0IDO0wiM4kjNzEzW}`
